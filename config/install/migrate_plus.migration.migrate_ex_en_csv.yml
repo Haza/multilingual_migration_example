@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - multilingual_migration_example
+id: migrate_ex_en_csv
+label: CSV file migration
+migration_tags:
+  - CSV
+source:
+  plugin: csv
+  path: modules/multilingual_migration_example/node_en.csv
+  header_row_count: 1
+  keys:
+    - id
+  column_names:
+    0:
+      id: Identifier
+    1:
+      title: Title
+    2:
+      body: Body
+process:
+  type:
+    plugin: default_value
+    default_value: article
+  title: title
+  body: body
+  langcode:
+    plugin: default_value
+    default_value: 'en'
+destination:
+  plugin: entity:node
+migration_dependencies:
+  required: {}
+  optional: {}

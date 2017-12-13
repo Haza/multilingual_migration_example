@@ -1,0 +1,9 @@
+name: Multilingual Migration Example
+type: module
+description: Custom Migration
+core: 8.x
+package: Custom
+dependencies:
+  - migrate_source_csv
+  - migrate_plus
+  - migrate_tools
